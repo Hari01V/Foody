@@ -16,9 +16,9 @@ export default function Footer(props) {
         </div>
         <div class="socials">
           <div class="socials-icon">
-            <img src="https://img.icons8.com/ios-glyphs/50/000000/facebook-new.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter.png" />
+            <a href="/"><img src="https://img.icons8.com/ios-glyphs/50/000000/facebook-new.png" /></a>
+            <a href="/"><img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png" /></a>
+            <a href="/"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter.png" /></a>
           </div>
         </div>
         <div class="footer-options">

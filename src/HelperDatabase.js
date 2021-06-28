@@ -55,6 +55,7 @@ const brands = [{
 }];
 
 const restaurants = [{
+  _id: 1,
   isPromoted: true,
   img: pizza,
   name: "Ovenstory pizza",
@@ -65,6 +66,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 2,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -75,6 +77,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 3,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -85,6 +88,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 4,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -95,6 +99,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 5,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -105,6 +110,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 6,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -115,6 +121,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 7,
   isPromoted: true,
   img: pizza,
   name: "Ovenstory pizza",
@@ -125,6 +132,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 8,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -135,6 +143,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 9,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",
@@ -145,6 +154,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 10,
   isPromoted: true,
   img: pizza,
   name: "Ovenstory pizza",
@@ -155,6 +165,7 @@ const restaurants = [{
     rate: "$20 for two"
   }
 }, {
+  _id: 11,
   isPromoted: false,
   img: pizza,
   name: "Ovenstory pizza",

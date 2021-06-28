@@ -21,9 +21,9 @@ export default function HomePage(props) {
         </span>
         <div class="offers">
           {offers.map(offer =>
-            <div class="offers-item">
+            <a class="offers-item" href="/">
               <img class="offers-image" src={offer.img} alt={offer.alt} />
-            </div>
+            </a>
           )}
         </div>
       </div>
@@ -33,10 +33,10 @@ export default function HomePage(props) {
         <h1 class="top-brands-heading">Top brands in spotlight</h1>
         <ul class="brands">
           {brands.map(brand =>
-            <li class="brands-item">
+            <a href="/" class="brands-item">
               <img src={brand.img} alt={brand.alt} />
               <span class="brand-time">{brand.time}</span>
-            </li>
+            </a>
           )}
         </ul>
       </div>

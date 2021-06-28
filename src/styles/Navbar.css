@@ -7,6 +7,7 @@
   font-size: 16px;
   padding: 20px 160px;
   background: rgb(255, 251, 251);
+  text-decoration: none;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -16,6 +17,8 @@
   z-index: 100;
 }
 .brand{
+  color: black;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +35,9 @@
   text-orientation: upright;
   transform: scale(1.4, 1);
 }
+.navbar-home{
+  cursor: pointer;
+}
 .navbar-home span{
   font-size: 14px;
   font-weight: 600;
@@ -40,9 +46,8 @@
   text-underline-offset: 8px;
   margin: 0 4px;
   letter-spacing: 1px;
-  cursor: pointer;
 }
-.navbar-home span:hover{
+.navbar-home:hover span:nth-of-type(1){
   color: orangered;
 }
 .navbar-home .home-address{
@@ -68,6 +73,10 @@
   padding: 0 8px;
   text-transform: capitalize;
   cursor: pointer;
+}
+.navbar-list-item a{
+  color: black;
+  text-decoration: none;
 }
 .navbar-list-item:hover{
   color: orangered;
