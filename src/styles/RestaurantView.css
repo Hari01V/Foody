@@ -5,6 +5,11 @@
 .restaurant-view .navbar{
   position: relative;
 }
+.restaurant-intro{
+  height: fit-content;
+  position: relative;
+  background: white;
+}
 .restaurant-intro .breadcrumbs{
   margin: 12px 0 6px 0;
 }
@@ -92,10 +97,18 @@
   z-index: 2;
   backdrop-filter: brightness(0.5);
 }
+
+.restaurant-intro .view-navbar{
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .intro-details{
   width: 100%;
   display: flex;
   margin: 8px 0;
+  background: white;
 }
 .details-1{
   width: 60%;
@@ -152,6 +165,16 @@
   background: rgb(237, 90, 107);
 }
 
+.view-section-tab-container{
+  margin-top: 28px;
+}
+.view-section-tab-container .PrivateTabIndicator-colorSecondary-5{
+  background-color: orangered;
+}
+
+.restaurant-intro .tab-panel{
+  padding: 0;
+}
 
 @media (max-width: 1350px) {
   .container{
