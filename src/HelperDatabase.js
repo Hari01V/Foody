@@ -1,6 +1,9 @@
 import pizza from './pics/pizza.jpg';
 import dominos from './pics/domino.webp';
 import mcdonalds from './pics/mcdonalds.webp';
+import burger1 from './pics/burger1.webp';
+import burger2 from './pics/burger2.webp';
+import burger3 from './pics/burger3.webp';
 
 const offers = [{
   img: pizza,
@@ -60,121 +63,32 @@ const restaurants = [{
   img: pizza,
   name: "Ovenstory pizza",
   desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 2,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 3,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 4,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 5,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 6,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 7,
-  isPromoted: true,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 8,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 9,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 10,
-  isPromoted: true,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
-}, {
-  _id: 11,
-  isPromoted: false,
-  img: pizza,
-  name: "Ovenstory pizza",
-  desc: "American, fast foods, snacks",
-  detail: {
-    rating: "3.9",
-    time: "38mins",
-    rate: "$20 for two"
-  }
+  time: "9am - 2am (Everyday)",
+  rating: "3.9",
+  travelling_time: "38 mins",
+  rate: "$20 for two",
+  restaurants_pics: [{
+    src: burger1
+  }, {
+    src: burger2
+  }, {
+    src: burger3
+  }, {
+    src: burger1
+  }, {
+    src: burger1
+  }, {
+    src: burger2
+  }, {
+    src: burger1
+  }, {
+    src: burger3
+  }],
+
 }];
 
-export { offers, brands, restaurants };
+function getRestaurant(id) {
+  return restaurants.find((restaurant) => restaurant._id === id);
+}
+
+export { offers, brands, restaurants, getRestaurant };
