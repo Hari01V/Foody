@@ -22,7 +22,9 @@
 .menu-title{
   color: black;
   padding: 2px 20px 2px 2px;
+  text-decoration: none;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 .menu-title.active{
   color: orangered;
