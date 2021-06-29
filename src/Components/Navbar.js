@@ -34,7 +34,7 @@ export default function Navbar(props) {
         </li>
       </ul>
       <div className="hamburger-icon">
-        <img src="https://img.icons8.com/ios-glyphs/30/000000/menu--v1.png" />
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/menu--v1.png" alt="hamburger-icon" />
       </div>
     </nav>
   )

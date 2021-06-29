@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/OrderNow.css';
 
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+
 import emptyCart from '../pics/cart.png';
 
 export default function OrderNow(props) {
@@ -15,26 +18,28 @@ export default function OrderNow(props) {
   return (
     <div className="ordernow">
       <ul className="ordernow-menu">
-        {menu_title.map((title) =>
-          <li className="menu-title active">
+        {menu_title.map((title, index) =>
+          <li className="menu-title active" key={`menu-title-${index}`}>
             {title}
           </li>
         )}
       </ul>
       <div className="ordernow-items">
-        {Object.keys(menu).map((title) =>
-          <div className="items-section">
+        {Object.keys(menu).map((title, section_index) =>
+          <div className="items-section" key={`section-${title}-${section_index}`}>
             <h1 className="section-title">{title}</h1>
-            {menu[title].map((item) =>
-              <div className="single-item">
+            <p className="section-count-items">{menu[title].length} Items</p>
+            {menu[title].map((item, index) =>
+              <div className="single-item" key={`section-${title}-single-${index}`}>
                 <div className="single-item-info">
-                  {item.isVeg ? <div>Veg</div> : <div>Non-Veg</div>}
+                  <div className={item.isVeg ? "veg-icon" : "nonVeg-icon"}></div>
                   <div className="item-info-name">{item.name}</div>
                   <div className="item-info-cost">{item.cost}</div>
                   <div className="item-info-desc">{item.desc}</div>
                 </div>
                 <div className="single-item-img">
                   <img src={item.img} alt={item.name} />
+                  <div className="Add-btn">Add</div>
                 </div>
               </div>
             )}

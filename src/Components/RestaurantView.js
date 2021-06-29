@@ -13,7 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
-import { getRestaurant, restaurants } from '../HelperDatabase';
+import { getRestaurant } from '../HelperDatabase';
 
 import '../styles/RestaurantView.css';
 
@@ -31,7 +31,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3} className="tab-panel">
-          <Typography>{children}</Typography>
+          <Typography component={'span'}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -60,7 +60,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RestaurantView(props) {
 
-  let { routeProps } = props;
+  let { routeProps, setTabValue } = props;
+  const path = routeProps.match.url;
+  const restaurant_id = routeProps.match.params.id;
 
   const [details, setDetails] = useState(null);
 
@@ -71,7 +73,11 @@ export default function RestaurantView(props) {
   }, []);
 
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(parseInt(setTabValue));
+
+  useEffect(() => {
+    setValue(setTabValue);
+  }, [setTabValue]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -85,12 +91,12 @@ export default function RestaurantView(props) {
           <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
             <Link to="/">Home</Link>
             <Link to="/">All Restaurants</Link>
-            <Typography color="textPrimary">{details.name}</Typography>
+            <Typography color="textPrimary" component={'span'}>{details.name}</Typography>
           </Breadcrumbs>
           <ul className="small-gallery">
             {details.restaurants_pics && details.restaurants_pics.slice(0, 4).map((pic, index) =>
-              <li className="small-gallery-photo">
-                {index == 3 ? <p className="view-gallery-btn">View Gallery</p> : <p className="empty-space"></p>}
+              <li className="small-gallery-photo" key={`small-gallery-photo-${index}`}>
+                {index === 3 ? <p className="view-gallery-btn">View Gallery</p> : <p className="empty-space"></p>}
                 <img src={pic.src} alt="" />
               </li>
             )}
@@ -123,13 +129,23 @@ export default function RestaurantView(props) {
 
             {/* RESTAURANT VIEW SECTION */}
             <div className={classes.root}>
-              <div class="view-section-tab-container">
+              <div className="view-section-tab-container">
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                  <Tab label="Overview" {...a11yProps(0)} />
-                  <Tab label="Order Now" {...a11yProps(1)} />
-                  <Tab label="Reviews" {...a11yProps(2)} />
-                  <Tab label="Menu" {...a11yProps(3)} />
-                  <Tab label="Photos" {...a11yProps(4)} />
+                  <Link to={`/restaurants/${restaurant_id}/`} className="tab-link">
+                    <Tab label="Overview" {...a11yProps(0)} />
+                  </Link>
+                  <Link to={`/restaurants/${restaurant_id}/order`} className="tab-link">
+                    <Tab label="Order Now" {...a11yProps(1)} />
+                  </Link>
+                  <Link to={`/restaurants/${restaurant_id}/reviews`} className="tab-link">
+                    <Tab label="Reviews" {...a11yProps(2)} />
+                  </Link>
+                  <Link to={`/restaurants/${restaurant_id}/menu`} className="tab-link">
+                    <Tab label="Menu" {...a11yProps(3)} />
+                  </Link>
+                  <Link to={`/restaurants/${restaurant_id}/photos`} className="tab-link">
+                    <Tab label="Photos" {...a11yProps(4)} />
+                  </Link>
                 </Tabs>
               </div>
             </div>

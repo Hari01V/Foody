@@ -14,10 +14,10 @@ export default function HomePage(props) {
       <Navbar />
       <div className="home container">
         <span className="left-slide-btn">
-          <img src="https://img.icons8.com/glyph-neue/64/000000/chevron-left.png" />
+          <img src="https://img.icons8.com/glyph-neue/64/000000/chevron-left.png" alt="left-btn" />
         </span>
         <span className="right-slide-btn">
-          <img src="https://img.icons8.com/glyph-neue/64/000000/chevron-right.png" />
+          <img src="https://img.icons8.com/glyph-neue/64/000000/chevron-right.png" alt="right-btn" />
         </span>
         <div className="offers">
           {offers.map(offer =>
