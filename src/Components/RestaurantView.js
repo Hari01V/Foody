@@ -153,7 +153,7 @@ export default function RestaurantView(props) {
             </div>
           </div>
           <TabPanel value={value} index={0}>
-            <OverView />
+            <OverView details={details} />
           </TabPanel>
           <TabPanel value={value} index={1}>
             <OrderNow menu={details.menu} />

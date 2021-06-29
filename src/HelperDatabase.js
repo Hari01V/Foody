@@ -68,6 +68,7 @@ const restaurants = [{
   img: pizza,
   name: "Ovenstory pizza",
   desc: "American, fast foods, snacks",
+  about: "Chirpy Crowd, Drive through, Economical, Cute Little Place, Great Recommendations, Prompt Service",
   time: "9am - 2am (Everyday)",
   rating: "3.9",
   travelling_time: "38 mins",
@@ -469,7 +470,15 @@ const restaurants = [{
   }, {
     src: menu4,
     alt: menu4
-  }]
+  }],
+  location: {
+    address: "Dukes Complex, 120, Bharathiar Salai, Melapudur, Cantonment, Tiruchirappalli, Tamil Nadu 620001",
+    coordinates: {
+      lat: 10.799403000481698,
+      lng: 78.68708356941423
+    }
+  },
+  popular_dishes: ["Deluxe Veggie Pizza", "Veg Extravaganza Pizza", "Veggie Paradise", "Calzone Pockets", "Farmhouse Pizza", "Choco Lava Cake"]
 }];
 
 function getRestaurant(id) {
