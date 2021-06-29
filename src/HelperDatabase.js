@@ -5,6 +5,10 @@ import burger1 from './pics/burger1.webp';
 import burger2 from './pics/burger2.webp';
 import burger3 from './pics/burger3.webp';
 import chickenFries from './pics/chickenFries.jpg';
+import menu1 from './pics/menu1.webp';
+import menu2 from './pics/menu2.webp';
+import menu3 from './pics/menu3.webp';
+import menu4 from './pics/menu4.webp';
 
 const offers = [{
   img: pizza,
@@ -452,7 +456,20 @@ const restaurants = [{
       rating: "4.8",
       numberOfVotes: 8
     }]
-  }
+  },
+  menuPics: [{
+    src: menu1,
+    alt: menu1
+  }, {
+    src: menu2,
+    alt: menu2
+  }, {
+    src: menu3,
+    alt: menu3
+  }, {
+    src: menu4,
+    alt: menu4
+  }]
 }];
 
 function getRestaurant(id) {

@@ -175,6 +175,9 @@
   color: #1b1b1b;
   text-decoration: none;
 }
+.view-section-tab-container .MuiTabs-root{
+  border-bottom: solid 1px #dadada;
+}
 
 .restaurant-intro .tab-panel{
   padding: 0;
