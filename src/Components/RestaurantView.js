@@ -98,7 +98,12 @@ export default function RestaurantView(props) {
           <ul className="small-gallery">
             {details.restaurants_pics && details.restaurants_pics.slice(0, 4).map((pic, index) =>
               <li className="small-gallery-photo" key={`small-gallery-photo-${index}`}>
-                {index === 3 ? <p className="view-gallery-btn">View Gallery</p> : <p className="empty-space"></p>}
+                {index === 3 ?
+                  <p className="view-gallery-btn">
+                    <Link to={`/restaurants/${restaurant_id}/photos`}>
+                      View Gallery
+                    </Link>
+                  </p> : <p className="empty-space"></p>}
                 <img src={pic.src} alt="" />
               </li>
             )}
