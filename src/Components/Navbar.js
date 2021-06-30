@@ -1,7 +1,73 @@
 import React from 'react';
 import '../styles/Navbar.css';
 
+import SearchIcon from '@material-ui/icons/Search';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import LocalOfferOutlinedIcon from '@material-ui/icons/LocalOfferOutlined';
+import CloseIcon from '@material-ui/icons/Close';
+import GpsFixedIcon from '@material-ui/icons/GpsFixed';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+    padding: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center"
+  },
+  fullList: {
+    width: 'auto',
+  },
+});
+
 export default function Navbar(props) {
+  const classes = useStyles();
+  const [state, setState] = React.useState({
+    left: false
+  });
+
+  const toggleDrawer = (open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setState({ ['left']: open });
+  };
+
+  const getGpsLocation = (event) => {
+    // GET GPS LOCATION
+  }
+
+  const list = () => (
+    <div
+      className={clsx(classes.list)}
+      role="presentation">
+      <CloseIcon className="home-close" onClick={toggleDrawer(false)} />
+      <input type="text" placeholder="Search for area, street name"
+        className="home-search-input" />
+      <div className="home-gps-btn" onClick={getGpsLocation}>
+        <GpsFixedIcon />
+        <div>
+          Get Current Location
+          <p className="home-p">Using GPS</p>
+        </div>
+      </div>
+      <div className="home-saved-address">
+        <HomeOutlinedIcon />
+        <div>
+          Home
+          <p className="home-p">Dukes Complex, 120, Bharathiar Salai, Melapudur, Cantonment, Tiruchirappalli, Tamil Nadu 620001</p>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <nav className="navbar container">
@@ -13,25 +79,33 @@ export default function Navbar(props) {
         </svg>
         <span className="brand-name">Foody</span>
       </a>
-      <div className="navbar-home">
+      <div className="navbar-home" onClick={toggleDrawer(true)}>
         <span>Home</span>
         <span className="home-address">Central Bus Stand, KK-Nagar</span>
       </div>
+      <SwipeableDrawer
+        anchor={'left'}
+        open={state['left']}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        {list('left')}
+      </SwipeableDrawer>
       <ul className="navbar-list">
         <li className="navbar-list-item">
-          <a href="/">Search</a>
+          <a href="/"><SearchIcon /> Search</a>
         </li>
         <li className="navbar-list-item">
-          <a href="/">Offers</a>
+          <a href="/"><LocalOfferOutlinedIcon /> Offers</a>
         </li>
         <li className="navbar-list-item">
-          <a href="/">Help</a>
+          <a href="/"><HelpOutlineIcon /> Help</a>
         </li>
         <li className="navbar-list-item">
-          <a href="/">Username</a>
+          <a href="/"><PersonOutlineIcon /> Username</a>
         </li>
         <li className="navbar-list-item">
-          <a href="/">Cart</a>
+          <a href="/"><ShoppingCartOutlinedIcon /> Cart</a>
         </li>
       </ul>
     </nav>
