@@ -177,7 +177,7 @@
 .view-section-tab-container{
   margin-top: 28px;
 }
-.view-section-tab-container .PrivateTabIndicator-colorSecondary-5{
+.view-section-tab-container .MuiTabs-root .PrivateTabIndicator-colorSecondary-6{
   background-color: orangered;
 }
 .view-section-tab-container .tab-link{

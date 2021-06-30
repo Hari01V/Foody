@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Navbar.css';
 
 export default function Navbar(props) {
+
   return (
     <nav className="navbar container">
       <a className="brand" href="/">
@@ -33,9 +34,6 @@ export default function Navbar(props) {
           <a href="/">Cart</a>
         </li>
       </ul>
-      <div className="hamburger-icon">
-        <img src="https://img.icons8.com/ios-glyphs/30/000000/menu--v1.png" alt="hamburger-icon" />
-      </div>
     </nav>
   )
 }

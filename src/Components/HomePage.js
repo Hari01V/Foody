@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import BottomNavbar from './BottomNavbar';
 import Footer from './Footer';
 import Restaurants from './Restaurants';
 
@@ -43,6 +44,7 @@ export default function HomePage(props) {
 
       <Restaurants />
       <Footer />
+      <BottomNavbar />
     </>
   )
 }

@@ -4,6 +4,7 @@ import Footer from './Footer';
 import OrderNow from './OrderNow';
 import RestaurantMenu from './RestaurantMenu';
 import OverView from './OverView';
+import RestaurantPhotos from './RestaurantPhotos';
 
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
@@ -170,7 +171,7 @@ export default function RestaurantView(props) {
             <RestaurantMenu menuPics={details.menuPics} name={details.name} />
           </TabPanel>
           <TabPanel value={value} index={4}>
-            Item Five
+            <RestaurantPhotos pics={details.restaurants_pics} name={details.name} />
           </TabPanel>
         </div>
       }

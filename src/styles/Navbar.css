@@ -81,13 +81,6 @@
 .navbar-list-item:hover{
   color: orangered;
 }
-.hamburger-icon{
-  display: none;
-}
-.hamburger-icon img{
-  width: 32px;
-  height: 32px;
-}
 
 @media (max-width: 1350px) {
   .container{
@@ -114,11 +107,8 @@
   .navbar .navbar-list{
     display: none;
   }
-  .hamburger-icon{
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  .navbar-home .home-address{
+    display: inline-block;
   }
 }
 @media (max-width: 576px) {

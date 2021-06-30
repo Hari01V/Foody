@@ -1,12 +1,12 @@
-.menu-container{
+.photos-container{
   padding: 16px 8px;
 }
-.menus-title{
+.photos-title{
   color: #1b1b1b;
   font-size: 20px;
   margin: 0 0 12px 0;
 }
-.menu-img-container{
+.photos-img-container{
   width: 100%;
   min-height: 200px;
   height: fit-content;
@@ -15,7 +15,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.menu-img{
+.photos-img{
   width: 200px;
   height: 200px;
   border-radius: 12px;
@@ -23,7 +23,7 @@
   overflow: hidden;
   position: relative;
 }
-.menu-img img{
+.photos-img img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -31,7 +31,7 @@
   transition: 0.4s ease-in-out;
   z-index: 1;
 }
-.menu-img .empty-space{
+.photos-img .empty-space{
   width: 100%;
   height: 100%;
   background: transparent;
@@ -41,9 +41,9 @@
   z-index: 2;
   backdrop-filter: brightness(90%);
 }
-.menu-img:hover img{
+.photos-img:hover img{
   transform: scale(1.1);
 }
-.menu-img:hover .empty-space{
+.photos-img:hover .empty-space{
   backdrop-filter: brightness(100%);
 }

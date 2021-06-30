@@ -1,0 +1,16 @@
+.bottom-navbar{
+  display: none;
+}
+.bottom-navbar .MuiBottomNavigationAction-root.Mui-selected{
+  color: orangered;
+}
+
+@media (max-width: 800px) {
+  .bottom-navbar{
+    width: 100%;
+    border-top: solid 1px #dadada;
+    display: block;
+    position: sticky;
+    bottom: 0;
+  }
+}
