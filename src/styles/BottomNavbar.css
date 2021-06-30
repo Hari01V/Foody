@@ -1,5 +1,7 @@
 .bottom-navbar{
   display: none;
+  background: white;
+  z-index: 100;
 }
 .bottom-navbar .MuiBottomNavigationAction-root.Mui-selected{
   color: orangered;

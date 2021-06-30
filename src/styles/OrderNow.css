@@ -22,6 +22,7 @@
 .menu-title{
   color: black;
   padding: 2px 20px 2px 2px;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -47,9 +48,11 @@
 }
 .items-section .section-title{
   color: #1b1b1b;
+  font-size: 32px;
 }
 .items-section .section-count-items{
   color: #494949;
+  font-size: 17px;
   letter-spacing: 1px;
 }
 .items-section .single-item{
@@ -139,11 +142,13 @@
   object-fit: cover;
 }
 .single-item-img .Add-btn{
-  color: orangered;
+  color: #1a73e8;
   width: 100px;
+  max-width: 70%;
   background: white;
   padding: 4px;
-  border: solid 1px orangered;
+  font-size: 16px;
+  border: solid 1px #dadada;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -153,6 +158,10 @@
   bottom: 0;
   transform: translate(-50%, 50%);
   cursor: pointer;
+}
+.single-item-img .Add-btn:hover{
+  background: rgb(249 249 255);
+  border: 1px solid #d2e3fc;
 }
 .items-section .single-item:last-of-type{
   margin-bottom: 32px;
@@ -179,4 +188,62 @@
 .ordernow-cart .cart-empty img{
   width: 90%;
   margin: 12px 0;
+}
+
+
+@media (max-width: 1000px) {
+  .ordernow .ordernow-menu{
+    width: 20%;
+    min-width: 20%;
+  }
+  .ordernow-cart{
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .ordernow .ordernow-menu{
+    width: 15%;
+    min-width: 15%;
+  }
+  .menu-title{
+    font-size: 13px;
+    padding: 2px 12px 2px 2px;
+  }
+  .ordernow-items{
+    flex-grow: 1;
+    padding: 0 12px 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .ordernow .ordernow-menu{
+    display: none;
+  }
+  .ordernow-items{
+    border: none;
+    padding: 0 12px 0 20px;
+  }
+
+  .items-section .section-title{
+    font-size: 24px;
+  }
+  .items-section .section-count-items{
+    font-size: 14px;
+  }
+  .single-item .item-info-name{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .single-item .item-info-cost{
+    font-size: 14px;
+  }
+  .single-item .item-info-desc{
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .single-item-img .Add-btn{
+    width: 100px;
+    max-width: 60%;
+    font-size: 14px;
+  }
 }

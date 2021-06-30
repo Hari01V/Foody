@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
+import BottomNavbar from './BottomNavbar';
 import Footer from './Footer';
 import OrderNow from './OrderNow';
 import RestaurantMenu from './RestaurantMenu';
@@ -176,6 +177,7 @@ export default function RestaurantView(props) {
         </div>
       }
       <Footer />
+      {/* <BottomNavbar /> */}
     </div>
   )
 }
