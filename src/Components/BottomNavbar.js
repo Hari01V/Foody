@@ -4,9 +4,10 @@ import '../styles/BottomNavbar.css';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import SearchIcon from '@material-ui/icons/Search';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles({
   root: {
@@ -29,10 +30,10 @@ export default function BottomNavbar(props) {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Near Me" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Search" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Cart" icon={<LocationOnIcon />} />
-        <BottomNavigationAction label="Account" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Near Me" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Search" icon={<SearchIcon />} />
+        <BottomNavigationAction label="Cart" icon={<ShoppingCartIcon />} />
+        <BottomNavigationAction label="Account" icon={<PersonOutlineIcon />} />
       </BottomNavigation>
     </div>
   )

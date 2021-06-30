@@ -156,22 +156,25 @@
   align-items: center;
 }
 .details-2 .add-review{
-  color: rgb(237, 90, 107);
-  width: 100px;
-  padding: 4px 12px;
+  color: #1a73e8;
+  width: 90px;
+  padding: 4px 10px;
   margin: 8px 0 0 0;
   background: inherit;
-  border: solid 1px rgb(237, 90, 107);
+  border: solid 1px #dadada;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  box-shadow: rgba(237, 90, 107, 0.7) 0px 1px 6px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 3px 12px;
+}
+.details-2 .add-review svg{
+  width: 16px;
 }
 .details-2 .add-review:hover{
-  color: white;
-  background: rgb(237, 90, 107);
+  background: rgba(66,133,244,0.04);
+  border: 1px solid #d2e3fc;
 }
 
 .view-section-tab-container{
@@ -208,6 +211,39 @@
   .container{
     padding-left: 60px;
     padding-right: 60px;
+  }
+}
+@media (max-width: 800px) {
+  .restaurants-view{
+    font-size: 12px;
+  }
+  .small-gallery-photo{
+    width: 36%;
+    height: 195px;
+    font-size: 14px;
+  }
+  .small-gallery-photo:nth-of-type(1){
+    width: 60%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .small-gallery-photo:nth-of-type(2){
+    display: none;
+  }
+  .small-gallery-photo:nth-of-type(3){
+    display: none;
+  }
+  .small-gallery-photo.add-photo{
+    width: 36%;
+    height: 195px;
+    margin: 0 0.4%;
+    font-size: 14px;
+  }
+
+  .view-section-tab-container .tab-link .MuiTab-root{
+    font-size: 12px;
+    min-width: 100px;
   }
 }
 @media (max-width: 576px) {

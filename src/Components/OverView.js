@@ -90,7 +90,8 @@ export default function OverView(props) {
       </div>
       <div className="overview-map-container">
         <div className="overview-map"
-          style={{ width: '280px', height: '280px' }}>
+        // style={{ width: '280px', height: '280px' }}
+        >
           <GoogleMapReact
             bootstrapURLKeys={{ key: MAP_API_KEY, language: 'en' }}
             defaultCenter={location.coordinates}

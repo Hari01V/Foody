@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -7,6 +7,8 @@ import '../styles/Restaurants.css';
 import { restaurants } from '../HelperDatabase';
 
 export default function Restaurants(props) {
+
+  let [restaurants_list, setRestaurants_list] = useState(restaurants);
 
   return (
     <div className="restaurants container">
@@ -22,7 +24,7 @@ export default function Restaurants(props) {
       </div>
       <ul className="restaurants-list">
         {
-          restaurants.map(restaurant =>
+          restaurants_list.map(restaurant =>
             <li className="restaurants-item">
               <Link className="restaurants-item-link" to={`/restaurants/${restaurant._id}`}>
                 <div className={`restaurants-img-container ${restaurant.isPromoted ? "promoted-tag" : ""}`}>
@@ -42,7 +44,7 @@ export default function Restaurants(props) {
                     <span className="restaurants-time">{restaurant.travelling_time}</span>
                     <span className="restaurants-rate">{restaurant.rate}</span>
                   </div>
-                  <div className="restaurants-view">Quick View</div>
+                  <div className="restaurants-quick-view">Quick View</div>
                 </div>
               </Link>
             </li>
