@@ -31,6 +31,9 @@
   color: orangered;
   border-right: solid 4px orangered;
 }
+.pop-up-menu{
+  display: none;
+}
 
 .ordernow-items{
   width: 60%;
@@ -48,7 +51,7 @@
 }
 .items-section .section-title{
   color: #1b1b1b;
-  font-size: 32px;
+  font-size: 28px;
 }
 .items-section .section-count-items{
   color: #494949;
@@ -213,6 +216,9 @@
     flex-grow: 1;
     padding: 0 12px 0 20px;
   }
+  .items-section .section-title{
+    font-size: 24px;
+  }
 }
 @media (max-width: 576px) {
   .ordernow .ordernow-menu{
@@ -223,9 +229,6 @@
     padding: 0 12px 0 20px;
   }
 
-  .items-section .section-title{
-    font-size: 24px;
-  }
   .items-section .section-count-items{
     font-size: 14px;
   }
@@ -240,10 +243,40 @@
     font-size: 13px;
     font-weight: 300;
   }
-
   .single-item-img .Add-btn{
     width: 100px;
     max-width: 60%;
     font-size: 14px;
+  }
+
+  .pop-up-menu{
+    border-radius: 8px;
+    border: solid 1px #dadada;
+    box-shadow: rgb(26 115 232 / 12%) 0px 3px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 0);
+    z-index: 80;
+  }
+  .pop-up-menu-btn{
+    width: 90px;
+    color: white;
+    background: #1a73e8;
+    padding: 0 12px;
+  }
+  .pop-up-menu-btn svg{
+    width: 20px;
+    margin-right: 8px;
+  }
+  .pop-up-menu-btn.MuiButton-root, .pop-up-menu-btn.MuiButtonBase-root{
+    color: white;
+    background: #1a73e8;
+  }
+  .pop-up-menu-btn.MuiButton-root:hover{
+    background: rgb(54, 130, 253);
   }
 }

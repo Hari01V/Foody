@@ -113,7 +113,7 @@ export default function RestaurantView(props) {
               Add Photo <AddAPhotoIcon />
             </li>
           </ul>
-          <div className="view-navbar">
+          <div id="restaurant-view-navbar" className="view-navbar">
             <div className="intro-details">
               <div className="details-1">
                 <h1>{details.name}</h1>

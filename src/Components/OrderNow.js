@@ -3,14 +3,27 @@ import '../styles/OrderNow.css';
 
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
+
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import emptyCart from '../pics/cart.png';
 
 export default function OrderNow(props) {
 
   let { menu } = props;
-  let menu_title = [];
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  let menu_title = [];
   for (const title in menu) {
     menu_title.push(title);
   }
@@ -27,7 +40,8 @@ export default function OrderNow(props) {
       }
     })
 
-    var headerOffset = 200;
+    // var headerOffset = 200;
+    var headerOffset = document.getElementById("restaurant-view-navbar").clientHeight + 10;
     var section_position = section.getBoundingClientRect().top;
 
     window.scrollBy({
@@ -36,10 +50,8 @@ export default function OrderNow(props) {
     })
   }
 
-
   // FOR EFFECTS LIKE SCROLLSPY
   let observer = null;
-
   useEffect(() => {
     observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -57,6 +69,19 @@ export default function OrderNow(props) {
     document.querySelectorAll(".items-section").forEach(target => {
       observer.observe(target);
     });
+
+
+    document.addEventListener("scroll", () => {
+      const element = document.querySelector("#ordernow-pop-up-menu");
+      if (element) {
+        if (window.scrollY >= 600 && document.querySelector("html").clientWidth < 576) {
+          //CHANGE DISPLAY OF POP-UP-MENU
+          element.style.display = "flex";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    })
   })
 
 
@@ -71,6 +96,34 @@ export default function OrderNow(props) {
           </li>
         )}
       </ul>
+      {/* FOR SMALL WIDTH SCREENS - ORDERNOW_MENU */}
+      <div id="ordernow-pop-up-menu" className="pop-up-menu">
+        <Button className="pop-up-menu-btn" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+          <RestaurantMenuIcon />Menu
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+        >
+          {menu_title.map((title, index) =>
+            <MenuItem onClick={() => {
+              scrollToSection(title, index);
+              handleClose();
+            }}>{title}</MenuItem>
+          )}
+        </Menu>
+      </div>
       <div className="ordernow-items">
         {Object.keys(menu).map((title, section_index) =>
           <div id={`section-${title}-${section_index}`} className="items-section" key={`section-${title}-${section_index}`}>

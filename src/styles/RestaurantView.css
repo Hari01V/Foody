@@ -109,6 +109,7 @@
 
 .restaurant-intro .view-navbar{
   background: white;
+  padding-top: 8px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -125,6 +126,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.details-1 h1{
+  color: #1b1b1b;
+  font-size: 32px;
 }
 .details-1 p{
   color: #494949;
@@ -180,8 +185,8 @@
 .view-section-tab-container{
   margin-top: 28px;
 }
-.view-section-tab-container .MuiTabs-root .PrivateTabIndicator-colorSecondary-6{
-  background-color: orangered;
+.view-section-tab-container .MuiTabs-root .MuiTabs-indicator{
+  background-color: orangered !important;
 }
 .view-section-tab-container .tab-link{
   color: #1b1b1b;
@@ -241,6 +246,29 @@
     font-size: 14px;
   }
 
+  .details-1 h1{
+    font-size: 24px;
+  }
+  .details-1 p{
+    font-size: 13px;
+  }
+  .details-1 .details-1-promoted{
+    font-size: 13px;
+  }
+  .details-2{
+    font-size: 13px;
+  }
+  .restaurants-rating{
+    padding: 4px 6px;
+    margin: 0 0 4px 0;
+  }
+  .details-2 .add-review{
+    margin: 6px 0 0 0;
+  }
+
+  .view-section-tab-container{
+    margin-top: 12px;
+  }
   .view-section-tab-container .tab-link .MuiTab-root{
     font-size: 12px;
     min-width: 100px;
