@@ -40,9 +40,12 @@
 .right-slide-btn:hover img{
   transform: translateX(4px);
 }
+.offers-slider-container{
+  overflow: hidden;
+}
 .offers{
   display: flex;
-  overflow: hidden;
+  transition: 0.4s ease-in-out;
 }
 .offers-item{
   color: black;
