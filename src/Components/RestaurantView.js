@@ -170,7 +170,7 @@ export default function RestaurantView(props) {
             <OrderNow menu={details.menu} details={details} />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            REVIEW SECTION HERE
           </TabPanel>
           <TabPanel value={value} index={3}>
             <RestaurantMenu menuPics={details.menuPics} name={details.name} />
