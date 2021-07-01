@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/OrderNow.css';
 
 import AddIcon from '@material-ui/icons/Add';
@@ -10,10 +10,13 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import emptyCart from '../pics/cart.png';
+import { cart } from '../HelperDatabase';
 
 export default function OrderNow(props) {
 
   let { menu } = props;
+
+  const [cart_now, set_cart] = useState(cart);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
@@ -147,10 +150,45 @@ export default function OrderNow(props) {
         )}
       </div>
       <div className="ordernow-cart">
-        <div className="cart-empty">
-          <img src={emptyCart} alt="empty-cart" />
-          <div>Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
-        </div>
+        {cart_now.ordered_items.length ?
+          <div className="cart-container">
+            <h1>Cart</h1>
+            <p className="cart-info">{`${cart_now.ordered_items.length} ITEMS from ${cart_now.restaurant.name}`}</p>
+            <div className="cart-items">
+              {cart_now.ordered_items.map(item =>
+                <li className="cart-item">
+                  <div className="item-info">
+                    <div className={item.isVeg ? "veg-icon" : "nonVeg-icon"}></div>
+                    <h4>{item.name}</h4>
+                  </div>
+                  <div className="item-count">
+                    <RemoveIcon /> {item.count} <AddIcon />
+                  </div>
+                  <h4 className="item-cost">$ {item.cost * item.count}</h4>
+                </li>
+              )}
+            </div>
+            <div className="cart-total">
+              <div className="cart-total-label">
+                <h4>Subtotal</h4>
+                <p>Extra Charges may apply</p>
+              </div>
+              <h4 className="cart-total-amount">
+                {/* {cart_now.ordered_items.forEach(item => {
+                  subtotal += item.cost * item.count;
+                })} */}
+                $ {cart_now.subtotal}
+              </h4>
+            </div>
+            <button className="cart-checkout-btn"
+              onClick={() => { console.log("ORDERED") }}>CHECKOUT -></button>
+          </div>
+          :
+          <div className="cart-empty">
+            <img src={emptyCart} alt="empty-cart" />
+            <div>Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+          </div>}
+
       </div>
     </div>
   )

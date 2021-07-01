@@ -87,6 +87,10 @@ export default function RestaurantView(props) {
     setValue(newValue);
   };
 
+  const scrollToViewTabs = () => {
+    document.querySelector("#restaurant-view-navbar").scrollIntoView();
+  }
+
   return (
     <div className="restaurant-view">
       <Navbar />
@@ -102,7 +106,7 @@ export default function RestaurantView(props) {
               <li className="small-gallery-photo" key={`small-gallery-photo-${index}`}>
                 {index === 3 ?
                   <p className="view-gallery-btn">
-                    <Link to={`/restaurants/${restaurant_id}/photos`}>
+                    <Link to={`/restaurants/${restaurant_id}/photos`} onClick={scrollToViewTabs}>
                       View Gallery
                     </Link>
                   </p> : <p className="empty-space"></p>}
