@@ -3,6 +3,7 @@ import '../styles/OrderNow.css';
 
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 
 import Button from '@material-ui/core/Button';
@@ -14,7 +15,7 @@ import { cart } from '../HelperDatabase';
 
 export default function OrderNow(props) {
 
-  let { menu } = props;
+  let { menu, details } = props;
 
   const [cart_now, set_cart] = useState(cart);
 
@@ -51,6 +52,10 @@ export default function OrderNow(props) {
       top: section_position - headerOffset,
       behavior: 'smooth'
     })
+  }
+
+  const AddToCart = (item) => {
+    //CHANGE DATABASE AND REACT STATE FOR CARTS
   }
 
   // FOR EFFECTS LIKE SCROLLSPY
@@ -142,7 +147,7 @@ export default function OrderNow(props) {
                 </div>
                 <div className="single-item-img">
                   <img src={item.img} alt={item.name} />
-                  <div className="Add-btn">Add</div>
+                  <div className="Add-btn" onClick={() => AddToCart(item)}>Add</div>
                 </div>
               </div>
             )}
@@ -181,7 +186,7 @@ export default function OrderNow(props) {
               </h4>
             </div>
             <button className="cart-checkout-btn"
-              onClick={() => { console.log("ORDERED") }}>CHECKOUT -></button>
+              onClick={() => { console.log("ORDERED") }}>CHECKOUT <DoubleArrowIcon /></button>
           </div>
           :
           <div className="cart-empty">

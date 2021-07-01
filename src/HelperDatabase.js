@@ -543,9 +543,14 @@ let cart = {
     id: 11,
     name: "Regular French Fries",
     cost: "20",
-    desc: "Perfectly deep fried crispy French potatoes seasoned with salt and  served with tomato ketchup",
     isVeg: true,
     count: 1
+  }, {
+    id: 45,
+    name: "McVeggie™ Extra Value Meal",
+    cost: "75",
+    isVeg: true,
+    count: 2
   }]
 };
 
